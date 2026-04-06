@@ -50,9 +50,14 @@
 
 @layer utilities {
   .container {
-    @apply w-full mx-auto px-4 md:max-w-3xl lg:max-w-4xl xl:max-w-5xl 2xl:max-w-5xl
+    @apply w-full mx-auto px-4 md:max-w-3xl lg:max-w-5xl xl:max-w-6xl
+  }
+
+  .active-menu {
+    @apply w-full max-lg:text-center bg-primary/10 rounded-md font-semibold text-primary/100
   }
 }
+
 
 :root {
   --background: oklch(1 0 0);
@@ -127,10 +132,24 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground h-full w-full;
   }
+
   html {
-    @apply font-sans;
+    @apply font-sans h-full w-full;
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
   }
 }
