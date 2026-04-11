@@ -6,8 +6,8 @@ const ProjectCard = ({ project }) => {
     return (
         <div className={"relative"}>
             {/* hover UI */}
-            <div className='h-full p-1 rounded-md bg-secondary w-full'>
-                {project.preview && <img src={project.preview} loading='lazy' className='rounded-md h-full object-cover' alt="" />
+            <div className='h-55 p-1 rounded-md bg-secondary w-full'>
+                {project.preview && <img src={project.preview} loading='lazy' className='rounded-md h-full w-full object-cover' alt="" />
                 }
             </div>
 
