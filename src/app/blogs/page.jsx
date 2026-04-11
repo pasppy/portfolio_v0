@@ -7,7 +7,7 @@ export const metadata = {
 
 const Blogs = () => {
     return (
-        <div>Blogs</div>
+        <div className='h-[calc(100dvh-15rem)]'> <p>Coming Soon</p></div>
     )
 }
 

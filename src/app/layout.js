@@ -31,23 +31,24 @@ export default function RootLayout({ children }) {
   return (
     <html
       suppressHydrationWarning
+      data-scroll-behavior="smooth"
       lang="en"
-      className={` ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={` ${geistSans.variable} ${geistMono.variable} h-full antialiased `}
     >
       <body className={` ${poppins.className} `}>
         <ThemeProvider attribute={"class"} defaultTheme="system" enableSystem>
 
-          <Navbar /> {/* update link hover animation  */}
+          <Navbar />
 
-          <div className=" container grid lg:grid-cols-[250px_1fr] divide-x h-full">
+          <div className="container grid lg:grid-cols-[250px_1fr] divide-x h-full">
 
-            <aside className="relative hidden w-full lg:block  pt-8 pr-4 ">
+            <aside className="hidden w-full lg:block pt-8 pr-4 ">
               <Sidebar />
             </aside>
 
-            <div className="flex flex-col divide-y pt-20 lg:pt-8 lg:pl-8 ">
+            <div className="flex flex-col divide-y pt-20 lg:pt-8">
 
-              <main className="pb-8">
+              <main className="pb-8 lg:pl-16">
                 {children}
               </main>
 

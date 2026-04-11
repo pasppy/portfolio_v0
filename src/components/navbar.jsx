@@ -5,9 +5,11 @@ import { Button } from './ui/button';
 import Link from 'next/link';
 import { useTheme } from 'next-themes';
 import { usePathname } from 'next/navigation';
+import { resume_link } from "@/data.json"
+import ThemeBasedImage from './theme-based-image';
 
 const Navbar = () => {
-  const { theme, setTheme } = useTheme();
+  const { resolvedTheme, theme, setTheme } = useTheme();
   const pathName = usePathname();
   const [mounted, setMounted] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -76,21 +78,21 @@ const Navbar = () => {
             {/* logo */}
             <div className='flex gap-2 items-center'>
               <Code2 size={28} />
-              <h2 className='font-semibold'>pasppy</h2>
+              <h3 className='font-semibold'>pasppy</h3>
             </div>
 
             {/* links */}
             <div className=' flex gap-3 items-center'>
-              <Menu className='md:hidden' size={24} onClick={openFullNavbar} />
+              <Menu className='sm:hidden' size={24} onClick={openFullNavbar} />
               {/* menu items */}
-              <div className='max-md:hidden flex gap-6 '>
-                <Link href={"/abc"}><p className='font-light'>Projects</p></Link>
+              <div className='max-sm:hidden flex gap-6 '>
+                <Link href={"/projects"}><p className='font-light'>Projects</p></Link>
                 <Link href={"/blogs"} > <p className='font-light'>Blogs </p> </Link>
-                <Link href={"/"} > <p className='font-light'>Contact </p> </Link>
+                <Link href={"/#contact"} > <p className='font-light'>Contact</p> </Link>
               </div>
 
               <Button variant="ghost" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-                {theme === "dark" ? <Moon className='size-5' /> : <Sun className='size-5' />}
+                {resolvedTheme === "dark" ? <Moon className='size-5' /> : <Sun className='size-5' />}
               </Button>
 
             </div>
@@ -118,45 +120,45 @@ const Navbar = () => {
                 <Link
                   href={"/"}
                 >
-                  <h2 className={` font-light text-primary/70  px-3 ${pathName === "/" ? 'active-menu' : ""}`}>Home</h2>
+                  <h3 className={` font-light text-primary/70  px-3 py-1 ${pathName === "/" ? 'active-menu' : ""}`}>Home</h3>
                 </Link>
 
                 <Link
                   href={"/projects"}
                 >
-                  <h2 className={` font-light text-primary/70 px-3 ${pathName === "/projects" ? 'active-menu' : ""}`}>Projects </h2>
+                  <h3 className={` font-light text-primary/70 px-3 py-1 ${pathName === "/projects" ? 'active-menu' : ""}`}>Projects </h3>
                 </Link>
                 <Link
                   href={"/blogs"}
                 >
-                  <h2 className={` font-light text-primary/70 px-3  ${pathName === "/blogs" ? 'active-menu' : ""}`}>Blogs </h2>
+                  <h3 className={` font-light text-primary/70 px-3 py-1  ${pathName === "/blogs" ? 'active-menu' : ""}`}>Blogs </h3>
                 </Link>
               </div>
-              <div className='flex flex-col gap-2 items-center'>
-                <Link href={"/"}><h2 className='font-light'>My resume</h2></Link>
-                <Link href={"/projects"} > <h2 className='font-light'>View my work </h2> </Link>
+              <div className='flex flex-col gap-3 items-center'>
                 <a
-                  href={"https://drive.google.com/file/d/1fdBE4PupbdmoN8HypKYcRzRKa-CsrTI-/view?usp=sharing"}
+                  href={resume_link}
                   target='_blank'
                 >
-                  <h2 className='font-light'>Contact me </h2>
+                  <h3 className='font-light'>My resume</h3>
                 </a>
+                <Link href={"/projects"} > <h3 className='font-light'>View my work </h3> </Link>
+                <Link
+                  href={"/#contact"}
+                  onClick={closeFullNavbar}
+                >
+                  <h3 className='font-light'>Contact me </h3>
+                </Link>
               </div>
             </div>
 
             {/* socials */}
             <div className=' flex gap-4'>
               <a href="https://github.com/pasppy" target='_blank' onClick={closeFullNavbar}>
-                <img src={`${theme === "dark" ? "/github-light.svg" : "/github-dark.svg"}`}
-                  alt=""
-                  className='h-11 w-11'
-                />
+                <ThemeBasedImage dark={"/github-dark.svg"} light={"/github-light.svg"} classes={"h-11 w-11"} />
               </a>
               <a href="https://www.linkedin.com/in/nayedul-alam-26b4a6205/" target='_blank' onClick={closeFullNavbar}>
-                <img src={`${theme === "dark" ? "/linkedin-light.svg" : "/linkedin-dark.svg"}`}
-                  alt=""
-                  className='h-12 w-12'
-                />
+                <ThemeBasedImage dark={"/linkedin-dark.svg"} light={"/linkedin-light.svg"} classes={"h-12 w-12"} />
+
               </a>
             </div>
 

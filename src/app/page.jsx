@@ -1,11 +1,158 @@
+import SectionTemplate from "@/components/section-template";
+import Tags from "@/components/tags";
+import { Button } from "@/components/ui/button";
+import UserImage from "@/components/user-image";
+import Link from "next/link";
+import data from "@/data.json"
+import ExperienceCard from "@/components/experience-card";
+import ProjectCard from "@/components/project-card";
+import ThemeBasedImage from "@/components/theme-based-image";
+import { Indie_Flower } from 'next/font/google'
+
+const indieFlower = Indie_Flower({
+  subsets: ["latin"],
+  weight: ["400"]
+
+})
 
 export default function Home() {
-  return (
-    <div >
-      <div >
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi perferendis voluptatibus adipisci nostrum similique id. Voluptatem accusantium consequatur quos magnam quia ea veniam, veritatis inventore odio corrupti. Rem doloremque illum corporis nihil quidem incidunt tenetur, tempore ipsam, harum dignissimos qui animi, repellat fugit autem ducimus cum corrupti! Itaque nesciunt expedita labore perspiciatis consectetur, at quia quaerat delectus quasi repellat excepturi, tenetur placeat sunt iusto ipsum voluptas doloribus assumenda dolores ipsam atque sit quos voluptates accusantium corrupti. Illo possimus accusantium laborum vitae dolorum obcaecati, nisi mollitia repellat officia! Officia saepe nemo libero deserunt, aperiam iste, voluptas sed nisi rem sit iusto maiores fuga aut vero est eveniet error reiciendis odit vitae cupiditate repudiandae consectetur? Facere tenetur eveniet dicta dolorum doloremque impedit unde consequatur quisquam, aspernatur ad commodi sapiente veniam, laborum molestiae aliquam pariatur earum ullam at optio soluta quod ex iste laudantium! Cum minus quos quisquam impedit quasi in obcaecati ratione suscipit, excepturi, soluta quam non nisi similique, dicta facilis. Ullam quibusdam dolores nisi non atque quis hic, odio fugit quam perspiciatis ea est tempora assumenda sunt eum corporis cum numquam ex alias repellat illum itaque tempore praesentium? Velit eaque quibusdam quaerat eveniet ipsa ratione voluptas repellat accusantium voluptate placeat maxime odio molestias consectetur sint inventore aspernatur necessitatibus facere aut, labore assumenda deserunt a illum saepe! Deleniti, quisquam consequuntur impedit recusandae nisi similique quas vel est debitis possimus ab quis inventore eveniet dolorem, cum commodi. Reprehenderit alias unde qui autem beatae consequatur inventore dolore ducimus suscipit incidunt, hic animi ratione sunt eveniet necessitatibus in accusantium vitae! Fugiat amet hic rerum odio, dolorem dolor ipsa itaque aut reiciendis voluptatibus ex quis deserunt explicabo recusandae ducimus. Id vitae sint quae provident aperiam sequi tenetur quis ad sunt eius quisquam molestiae porro officia expedita, dolor eos. Voluptatem molestiae aliquid illo autem culpa debitis hic ullam pariatur cupiditate mollitia, quod aspernatur officiis quaerat incidunt sapiente nostrum ab animi odio perferendis libero, eveniet provident, corporis placeat! Dolor, quas tenetur. Labore quas ipsam cum. Illum placeat quas corrupti iste optio. Voluptas accusamus incidunt nobis, in doloribus minima expedita cupiditate. Consequuntur, accusantium! Assumenda dolorum iusto quod soluta voluptas praesentium, quia sapiente quasi accusantium, neque dolorem porro repellat accusamus voluptates eum ratione temporibus dolores doloremque tenetur corporis eaque cumque doloribus. At, amet impedit? Labore, fugit tempore deleniti, cumque voluptatem pariatur harum iste odio, esse enim dicta hic velit tenetur obcaecati ipsum illo placeat quae saepe! Corporis ullam dolor alias, repellendus magnam eum reiciendis. Voluptates excepturi dicta eveniet quasi nesciunt officia nam, consequatur iste in fuga magnam voluptatem ad expedita maxime vel nostrum soluta. Id error, magnam libero provident dolore aliquid quisquam blanditiis tempora minima, voluptatibus atque, facere voluptatum quae recusandae accusamus veniam architecto sunt laudantium in. Doloribus earum obcaecati quo illo velit pariatur amet rerum vel labore minus quia alias repellat, perspiciatis neque cupiditate iste ex modi enim sint tempore consequatur voluptatibus. At temporibus reiciendis praesentium animi placeat cumque dolorum libero quidem voluptatem dignissimos doloremque nostrum id pariatur accusamus, et architecto repellat natus eligendi vel. Dolore obcaecati quam maxime laboriosam accusantium quasi commodi non. Inventore accusantium error laboriosam ipsa sed, alias quisquam commodi pariatur esse fuga quos atque! Id, suscipit soluta! In debitis voluptatem non, deleniti id omnis blanditiis eos ut aspernatur voluptatibus vitae earum incidunt accusamus saepe error dolorum odit tempora asperiores nemo! Non rerum porro natus doloremque similique at temporibus labore? Vero excepturi dignissimos libero similique iure nesciunt quos hic soluta. Distinctio, dolorem dignissimos nostrum consequatur quasi cum eius aliquid illo unde repellat molestias mollitia facere enim magni impedit deserunt. Quos, voluptates fugit illum ipsam unde aperiam quas beatae deserunt sit incidunt autem ipsum aspernatur dicta repellendus recusandae cum amet iusto? Veniam tenetur, exercitationem culpa repellat quos enim quia odio a sint. Fuga natus accusamus vel praesentium, necessitatibus rerum modi commodi nesciunt autem cumque ex omnis alias assumenda dicta maxime inventore rem, nemo laborum facilis aliquam sequi quia. Eaque, minima ad nostrum eligendi beatae delectus explicabo amet soluta fugit ea voluptates animi vero possimus nulla ipsum maiores vitae dolores quae aliquam? Beatae itaque omnis explicabo fugiat in dolorum id porro magni? Rerum dolorum aperiam provident at nam incidunt possimus optio ex. Velit consequatur omnis minima eligendi obcaecati quia error, tempora a harum recusandae doloribus, sunt voluptates eius earum, vero aspernatur dignissimos quos. Rem ut perferendis voluptate. Numquam est veritatis eius nihil minima optio nemo iure vitae quaerat ipsam, dolore vero in at? Explicabo nulla placeat distinctio ipsam quod illo voluptas maiores ab doloribus vero sequi, aperiam expedita. Magnam asperiores omnis voluptates illum sed, iure tempore. Molestias aliquam quidem unde ipsum alias id itaque dolore debitis, placeat asperiores odit repellendus neque. Qui vel iure possimus aliquid eius modi? Blanditiis voluptates pariatur exercitationem itaque officia consequuntur neque voluptatem magnam. Eos enim deleniti maxime recusandae voluptates explicabo perferendis. Autem sit amet, quibusdam veritatis dicta soluta est, veniam minima libero maxime pariatur? Ipsa, laudantium quia vero nihil repellendus commodi reprehenderit sequi minus assumenda exercitationem quod aspernatur odio non consectetur placeat! Nisi quis necessitatibus pariatur, voluptate provident eaque culpa laboriosam hic, tempore reiciendis consequuntur ducimus porro? Odit quos, in accusamus maxime maiores possimus voluptas laudantium temporibus quisquam, dolores rem error fuga asperiores, esse sit nostrum exercitationem harum consequuntur? Similique fuga ratione nobis explicabo numquam iste repudiandae quasi doloremque veritatis quo, ipsum, velit vitae tenetur alias quaerat ullam, cum amet. Ex molestiae nostrum rem minima delectus non quod dolorem tenetur modi, ea, facere recusandae nobis id dignissimos enim odio rerum. Delectus pariatur ad illo, iure velit expedita assumenda suscipit explicabo est saepe, amet error eaque nostrum ex libero dolorem, reiciendis iste labore at minima sunt quam eveniet beatae tenetur! Aperiam, excepturi? Laudantium, asperiores minima eos nam ducimus cumque suscipit vitae dolores est in earum numquam, voluptatum labore! Molestiae, iure ipsa ipsum porro aliquam distinctio obcaecati iste a consequuntur commodi, ipsam modi deserunt nam! Veniam ipsa quae culpa rem dolorum maxime a quam! Rerum nihil nobis explicabo aliquam delectus eveniet necessitatibus laboriosam consequatur commodi. Maxime beatae saepe reiciendis quaerat dignissimos incidunt necessitatibus nihil fuga ea, animi aliquid mollitia similique possimus quo autem neque sit!
-      </div>
+  const { works, resume_link, projects: allProjects } = data;
+  const projects = allProjects.filter((p) => p?.display_main_page);
 
+  return (
+    <div className="">
+      {/* hero */}
+      <section className="md:pt-16">
+        <div className="flex flex-col gap-20">
+
+          {/* description + profile photo */}
+          <div className="grid max-sm:gap-6 sm:grid-cols-[3fr_1fr]">
+            <div className="relative h-42 w-42 sm:h- sm:w- lg:h-52 lg:w-52 sm:order-2">
+              <UserImage />
+              <p className="absolute bottom-0 -right-6 sm:-left-6 small">He/Him</p>
+            </div>
+
+            <div className="">
+              <h1>Hi, I'm <span className="font-bold text-">Nayedul Alam</span></h1>
+              <div className="sm:w-5/6 mt-6">
+                <p className="">I build web applications that solve real problems — not just tutorials.</p>
+                <p className=" mt-2">Focused on JavaScript, React, and backend systems, I care about writing clean code and building things that actually get used.</p>
+              </div>
+
+
+              <div className="mt-12 flex gap-4">
+                <Button asChild size="lg">
+                  <Link href={"/projects"}>View my work</Link>
+                </Button>
+                <Button asChild size="lg">
+                  <Link href={"#contact"}>Contact me</Link>
+
+                </Button>
+              </div>
+            </div>
+          </div>
+
+          {/* resume */}
+          <div className="self-end pr-6">
+            <a
+              href={resume_link} className="underline"
+              target="_blank"
+            > *My resume</a>
+          </div>
+        </div>
+      </section >
+      {/* about */}
+      <SectionTemplate title={"About Me"} subtitle={"I don’t just learn technologies — I use them to solve problems."}>
+        <div className="space-y-4">
+
+          <p>I’m a Computer Science student who prefers building over just learning.</p>
+
+          <p> Instead of jumping between technologies, I focus on understanding how things actually work — from frontend interactions to backend logic and data flow.</p>
+
+          <p> Right now, I’m working on real-world projects that solve everyday problems, while strengthening my problem-solving and system design skills.</p>
+
+          <p> My goal is simple: become an engineer who can build reliable, scalable systems — not just write code that works.</p>
+        </div>
+
+      </SectionTemplate>
+
+      {/* tech stack */}
+      <SectionTemplate title={"Tech Stack"}>
+        <div className="space-y-4">
+          <div>
+            <h4 className="underline">Frontend</h4>
+            <Tags tags={["React.js", "Next.js", "Javascript", "Tailwind", "Shadcn"]} />
+          </div>
+          <div>
+            <h4 className="underline">Backend</h4>
+            <Tags tags={["Node.js", "Express.js", "Rest APIs", "Auth", "Supabase"]} />
+          </div>
+          <div>
+            <h4 className="underline">Tools</h4>
+            <Tags tags={["Github", "Vercel", "Render", "Postman"]} />
+          </div>
+        </div>
+      </SectionTemplate>
+
+      {/* work experience */}
+      <SectionTemplate title={"Work Experience"}>
+
+        <div className="mx-2 pl-6 border-l-4 space-y-4">
+
+          {works?.map((work, idx) => <ExperienceCard key={idx} work={work} />)}
+
+        </div>
+      </SectionTemplate>
+
+      {/* projects */}
+      <SectionTemplate title={"Projects"}>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {projects?.map((project, idx) => <ProjectCard key={idx} project={project} />)}
+        </div>
+
+        <Button className={"mt-4"} size="lg"> <Link href={"/projects"}>See All</Link></Button>
+
+      </SectionTemplate>
+
+      <SectionTemplate title={"Current Focus"} subtitle={"What I’m Currently Working On"}>
+        <div className="space-y-1">
+          <p>- Building more full-stack applications with real use cases</p>
+          <p>- Improving problem solving through DSA </p>
+          <p>- Learning how scalable systems are designed in real-world products</p>
+        </div>
+      </SectionTemplate>
+
+      {/* contact links */}
+      <section id="contact" className="mt-26 space-y-12">
+        <h4 className="text-right ">Let's build something meaningful.</h4>
+        <div className=" ">
+          <h4>If you have an opportunity, a project, or just want to connect — feel free to reach out.</h4>
+        </div>
+
+        <div className="space-y-4 inline-block relative">
+
+          <div className="absolute -right-45 top-20">
+            <ThemeBasedImage dark={"/arrow-dark.svg"} light={"/arrow-light.svg"} classes={"w-8 h-8  scale-y-[-1]"} />
+            <small className={`${indieFlower.className} underline`}>Let’s connect just drop a message</small>
+          </div>
+
+          <h4>My Socials</h4>
+          <div className="flex flex-col items-start gap-2">
+            <a href="https://github.com/pasppy" className="underline">Github</a>
+            <a href="https://www.linkedin.com/in/nayedul-alam-26b4a6205/" className="underline">linkedIn</a>
+            <a href="mailto:nayedul05@gmail.com" className="underline">Email</a>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <h4>Quick Links</h4>
+          <div className="flex flex-col items-start gap-2">
+            <a href={resume_link} target="_blank" className=" underline">My resume</a>
+            <a href="mailto:nayedul05@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Nayedul%2C%0A%0AI%20came%20across%20your%20work%20and%20would%20like%20to%20discuss%20a%20potential%20opportunity.%0A%0APlease%20let%20me%20know%20your%20availability.%0A%0AThanks" className="underline">Hire Me</a>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

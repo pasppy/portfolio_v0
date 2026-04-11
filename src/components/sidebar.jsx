@@ -5,10 +5,12 @@ import { Button } from './ui/button'
 import { useTheme } from 'next-themes'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import ThemeBasedImage from './theme-based-image'
+import { resume_link } from "@/data.json"
 
 const Sidebar = () => {
 
-    const { theme, setTheme } = useTheme();
+    const { resolvedTheme, theme, setTheme } = useTheme();
     const [mounted, setMounted] = useState(false);
     const pathName = usePathname();
 
@@ -16,10 +18,11 @@ const Sidebar = () => {
     useEffect(() => {
         setMounted(true);
     }, [])
+
     if (!mounted) return null;
 
     return (
-        <div className=' sticky top-8' >
+        <div className='sticky top-8' >
             <div className='flex flex-col divide-y gap-8'>
                 {/* logo */}
                 <section className='pb-8'>
@@ -27,11 +30,11 @@ const Sidebar = () => {
                         {/* logo */}
                         <div className='flex gap-2 items-center'>
                             <Code2 size={28} />
-                            <h2 className='font-semibold'>pasppy</h2>
+                            <h4 className='font-semibold'>pasppy</h4>
                         </div>
 
                         <Button variant="ghost" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
-                            {theme === "dark" ? <Moon className='size-5' /> : <Sun className='size-5' />}
+                            {resolvedTheme === "dark" ? <Moon className='size-5' /> : <Sun className='size-5' />}
                         </Button>
                     </div>
                 </section>
@@ -42,7 +45,7 @@ const Sidebar = () => {
                 {/* tabs */}
                 <section className='pb-8'>
 
-                    <div className='flex flex-col gap-2'>
+                    <div className='flex flex-col gap-1'>
                         <Link
                             href={"/"}
                         >
@@ -66,23 +69,21 @@ const Sidebar = () => {
 
                 {/* links */}
                 <section className='pb-8'>
-                    <div className='flex flex-col gap-2'>
-                        <Link
-                            href={"/"}
+                    <div className='flex flex-col gap-1'>
+                        <a
+                            href={resume_link}
+                            target='_blank'
                         >
                             <p className='font-light py-1 pl-2'>My resume</p>
-                        </Link>
+                        </a>
                         <Link
                             href={"/projects"}
                         >
                             <p className='font-light py-1 pl-2'>View my work </p>
                         </Link>
-                        <a
-                            href={"https://drive.google.com/file/d/1fdBE4PupbdmoN8HypKYcRzRKa-CsrTI-/view?usp=sharing"}
-                            target='_blank'
-                        >
+                        <Link href={"/#contact"}>
                             <p className='font-light py-1 pl-2'>Contact me </p>
-                        </a>
+                        </Link>
                     </div>
                 </section>
 
@@ -90,19 +91,16 @@ const Sidebar = () => {
                 <section className='pb-8'>
                     <div className=' flex items-center gap-4'>
                         <a href="https://github.com/pasppy" target='_blank' >
-                            <img src={`${theme === "dark" ? "/github-light.svg" : "/github-dark.svg"}`}
-                                alt=""
-                                className='h-8 w-8'
-                            />
+                            <ThemeBasedImage dark={"/github-dark.svg"} light={"/github-light.svg"} classes={"h-8 w-8"} />
+
                         </a>
                         <a href="https://www.linkedin.com/in/nayedul-alam-26b4a6205/" target='_blank' >
-                            <img src={`${theme === "dark" ? "/linkedin-light.svg" : "/linkedin-dark.svg"}`}
-                                alt=""
-                                className='h-9 w-9'
-                            />
+                            <ThemeBasedImage dark={"/linkedin-dark.svg"} light={"/linkedin-light.svg"} classes={"h-9 w-9"} />
+
                         </a>
                     </div>
                 </section>
+
             </div>
 
         </div>
