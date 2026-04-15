@@ -4,10 +4,10 @@ import ThemeBasedImage from './theme-based-image'
 
 const ProjectCard = ({ project }) => {
     return (
-        <div className={"relative"}>
-            {/* hover UI */}
-            <div className='h-55 p-1 rounded-md bg-secondary w-full'>
-                {project.preview && <img src={project.preview} loading='lazy' className='rounded-md h-full w-full object-cover' alt="" />
+        <div className={"relative group "}>
+
+            <div className='h-55 p-1  overflow-hidden rounded-md bg-secondary w-full'>
+                {project.preview && <img src={project.preview} loading='lazy' className='group-hover:scale-105 transition-transform rounded-md h-full w-full object-cover' alt="" />
                 }
             </div>
 
@@ -20,14 +20,11 @@ const ProjectCard = ({ project }) => {
                     {/* links */}
                     <div className='flex gap-2 items-center bg-secondary/60 backdrop-blur-sm p-1 rounded-full'>
                         {project.source && <a href={project.source} target='_blank' >
-                            <ThemeBasedImage dark={"/github-dark.svg"} light={"/github-light.svg"} classes={"h-6 w-6"} />
-                        </a>
-                        }
-                        {
-                            project.live && <a href={project.live} target='_blank'>
-                                <Globe />
-                            </a>
-                        }
+                            <ThemeBasedImage dark={"/github-dark.svg"} light={"/github-light.svg"} classes={"hover:scale-110 h-6 w-6"} />
+                        </a>}
+                        {project.live && <a href={project.live} target='_blank' className='hover:scale-110'>
+                            <Globe />
+                        </a>}
                     </div>
                 </div>
 
