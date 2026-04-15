@@ -22,7 +22,7 @@ export default function Home() {
   return (
     <div className="">
       {/* hero */}
-      <section className="md:pt-16">
+      <section className="md:mt-16">
         <div className="flex flex-col gap-20">
 
           {/* description + profile photo */}
@@ -95,7 +95,7 @@ export default function Home() {
       </SectionTemplate>
 
       {/* work experience */}
-      <SectionTemplate title={"Work Experience"}>
+      <SectionTemplate id={"work-experience"} title={"Work Experience"}>
 
         <div className="mx-2 pl-6 border-l-4 space-y-4">
 

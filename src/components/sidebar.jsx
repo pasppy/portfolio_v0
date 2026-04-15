@@ -28,10 +28,13 @@ const Sidebar = () => {
                 <section className='pb-8'>
                     <div className='flex items-center justify-between'>
                         {/* logo */}
-                        <div className='flex gap-2 items-center'>
+                        <Link
+                            href={"/"}
+                            className='flex gap-2 items-center'
+                        >
                             <Code2 size={28} />
                             <h4 className='font-semibold'>pasppy</h4>
-                        </div>
+                        </Link>
 
                         <Button variant="ghost" onClick={() => setTheme(theme === "dark" ? "light" : "dark")}>
                             {resolvedTheme === "dark" ? <Moon className='size-5' /> : <Sun className='size-5' />}
@@ -77,7 +80,7 @@ const Sidebar = () => {
                             <p className='font-light py-1 pl-2'>My resume</p>
                         </a>
                         <Link
-                            href={"/projects"}
+                            href={"/#work-experience"}
                         >
                             <p className='font-light py-1 pl-2'>View my work </p>
                         </Link>
@@ -101,9 +104,9 @@ const Sidebar = () => {
                     </div>
                 </section>
 
-            </div>
+            </div >
 
-        </div>
+        </div >
     )
 }
 

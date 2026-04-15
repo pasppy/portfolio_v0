@@ -8,9 +8,9 @@ const indieFlower = Indie_Flower({
 
 })
 
-const SectionTemplate = ({ children, title, subtitle }) => {
+const SectionTemplate = ({ children, title, subtitle, id }) => {
     return (
-        <section className='mt-18 '>
+        <section className='pt-18' id={id || undefined}>
 
             {/* heading */}
             <div>

@@ -76,10 +76,12 @@ const Navbar = () => {
           <div className='flex justify-between items-center'>
 
             {/* logo */}
-            <div className='flex gap-2 items-center'>
+            <Link
+              href='/'
+              className='flex gap-2 items-center'>
               <Code2 size={28} />
               <h3 className='font-semibold'>pasppy</h3>
-            </div>
+            </Link>
 
             {/* links */}
             <div className=' flex gap-3 items-center'>
@@ -138,10 +140,13 @@ const Navbar = () => {
                 <a
                   href={resume_link}
                   target='_blank'
+                  onClick={closeFullNavbar}
                 >
                   <h3 className='font-light'>My resume</h3>
                 </a>
-                <Link href={"/projects"} > <h3 className='font-light'>View my work </h3> </Link>
+                <Link
+                  href={"/#work-experience"}
+                  onClick={closeFullNavbar} > <h3 className='font-light'>View my work </h3> </Link>
                 <Link
                   href={"/#contact"}
                   onClick={closeFullNavbar}
