@@ -89,7 +89,7 @@ const Navbar = () => {
               {/* menu items */}
               <div className='max-sm:hidden flex gap-6 '>
                 <Link href={"/projects"}><p className='font-light'>Projects</p></Link>
-                <Link href={"/blogs"} > <p className='font-light'>Blogs </p> </Link>
+                {/* <Link href={"/blogs"} > <p className='font-light'>Blogs </p> </Link> */}
                 <Link href={"/#contact"} > <p className='font-light'>Contact</p> </Link>
               </div>
 
@@ -130,11 +130,11 @@ const Navbar = () => {
                 >
                   <h3 className={` font-light text-primary/70 px-3 py-1 ${pathName === "/projects" ? 'active-menu' : ""}`}>Projects </h3>
                 </Link>
-                <Link
+                {/* <Link
                   href={"/blogs"}
                 >
                   <h3 className={` font-light text-primary/70 px-3 py-1  ${pathName === "/blogs" ? 'active-menu' : ""}`}>Blogs </h3>
-                </Link>
+                </Link> */}
               </div>
               <div className='flex flex-col gap-3 items-center'>
                 <a

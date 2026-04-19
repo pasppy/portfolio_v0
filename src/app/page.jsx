@@ -42,7 +42,7 @@ export default function Home() {
 
               <div className="mt-12 flex gap-4">
                 <Button asChild size="lg">
-                  <Link href={"/projects"}>View my work</Link>
+                  <Link href={"/#work-experience"}>View my work</Link>
                 </Button>
                 <Button asChild size="lg">
                   <Link href={"#contact"}>Contact me</Link>

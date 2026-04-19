@@ -61,12 +61,12 @@ const Sidebar = () => {
                         >
                             <p className={` font-light text-primary/70 py-1 pl-2  ${pathName === "/projects" ? 'active-menu' : ""}`}>Projects </p>
                         </Link>
-                        <Link
+                        {/* <Link
                             href={"/blogs"}
 
                         >
                             <p className={` font-light text-primary/70 py-1 pl-2  ${pathName === "/blogs" ? 'active-menu' : ""}`}>Blogs </p>
-                        </Link>
+                        </Link> */}
                     </div>
                 </section>
 
