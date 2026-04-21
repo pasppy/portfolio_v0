@@ -24,7 +24,6 @@
         }
     ],
     "projects": [
-        
         {
             "title": "Expense Tracker",
             "year": "2026",
@@ -50,6 +49,18 @@
             "live": "https://shrtnr-umber.vercel.app/",
             "preview": "/projects-preview/url-shortner.png",
             "display_main_page": true
+        },
+        {
+            "title": "Portfolio",
+            "year": "2026",
+            "tags": [
+                "Next.js",
+                "Tailwind"
+            ],
+            "source": "https://github.com/pasppy/portfolio_v0",
+            "live": "",
+            "preview": "/projects-preview/portfolio.png",
+            "display_main_page": false
         },
         {
             "title": "HR Portal Backend",
