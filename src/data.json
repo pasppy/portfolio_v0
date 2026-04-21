@@ -24,18 +24,7 @@
         }
     ],
     "projects": [
-        {
-            "title": "My Portfolio",
-            "year": "2026",
-            "tags": [
-                "Next.js",
-                "Tailwind"
-            ],
-            "source": "https://github.com/pasppy/portfolio_v0",
-            "live": "",
-            "preview": "/projects-preview/portfolio.png",
-            "display_main_page": false
-        },
+        
         {
             "title": "Expense Tracker",
             "year": "2026",
